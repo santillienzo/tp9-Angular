@@ -1,0 +1,31 @@
+.lineaVertical {
+    border-left: 0.5px solid grey;
+    height: 500px;
+    margin-left: 150px;
+  }
+  
+  .cantidad {
+      font-size: 12px;
+  }
+  
+  .nombre {
+      font-weight: bold;
+      font-size: 25px;
+  }
+  
+  .precio {
+      font-size: 50px;
+  }
+  
+  .envioGratis {
+      color: green;
+  }
+  
+  .envio {
+      color: orange;
+  }
+  
+  .descripcion {
+      text-align: left;
+      padding: 10px;
+  }

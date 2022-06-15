@@ -1,0 +1,65 @@
+<div class="container">
+    <h5 style="padding: 10px;">Editar Producto</h5>
+    <form class="form-group">
+        <div class="row">
+            <div class="col">
+                <label>ID</label>
+                <input type="text" class="form-control" id="item.id" ([ngModel])="item.id" name="item.id" value="{{item.id}}" (input)="item.id = $event.target.value" disabled>
+            </div>
+            <div class="col">
+                <label>Instrumento</label>
+                <input type="text" class="form-control" id="item.instrumento" ([ngModel])="item.instrumento" name="item.instrumento" value="{{item.instrumento}}" (input)="item.instrumento = $event.target.value">
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col">
+                <label>Marca</label>
+                <input type="text" class="form-control" id="item.marca" ([ngModel])="item.marca" name="item.marca" value="{{item.marca}}" (input)="item.marca = $event.target.value">
+            </div>
+            <div class="col">
+                <label>Modelo</label>
+                <input type="text" class="form-control" id="item.modelo" ([ngModel])="item.modelo" name="item.modelo" value="{{item.modelo}}" (input)="item.modelo = $event.target.value">
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col">
+                <label>Imagen</label>
+                <input type="text" class="form-control" id="item.imagen" ([ngModel])="item.imagen" name="item.imagen" value="{{item.imagen}}" (input)="item.imagen = $event.target.value">
+            </div>
+            <div class="col">
+                <label>Precio</label>
+                <input type="text" class="form-control" id="item.precio" ([ngModel])="item.precio" name="item.precio" value="{{item.precio}}" (input)="item.precio = $event.target.value">
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col">
+                <label>Costo Envio</label>
+                <input type="text" class="form-control" id="item.costoEnvio" ([ngModel])="item.costoEnvio" name="item.costoEnvio" value="{{item.costoEnvio}}" (input)="item.costoEnvio = $event.target.value">
+            </div>
+            <div class="col">
+                <label>Cantidad Vendida</label>
+                <input type="text" class="form-control" id="item.cantidadVendida" ([ngModel])="item.cantidadVendida" name="item.cantidadVendida" value="{{item.cantidadVendida}}" (input)="item.cantidadVendida = $event.target.value">
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <label>Descripcion</label>
+            <textarea class="form-control" aria-label="With textarea" style="height: 150px;" id="item.descripcion" ([ngModel])="item.descripcion" name="item.descripcion" value="{{item.descripcion}}" (input)="item.descripcion = $event.target.value"></textarea>
+          </div>
+          <br>
+          <div class="row">
+            <div class="col" *ngIf="id === -1; else elseBlock">
+                <button type="button" class="btn btn-primary" (click)="crearRegistro(item)">Crear Registro</button>
+            </div>
+            <ng-template #elseBlock>
+                <button type="button" class="btn btn-primary" (click)="actualizarRegistro(item.id, item)">Guardar Cambios</button>
+            </ng-template>
+            <div class="col">
+                <button type="button" class="btn btn-secondary" (click)="cancelar()">Cancelar</button>
+            </div>
+        </div>
+    </form>
+</div>

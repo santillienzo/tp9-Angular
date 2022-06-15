@@ -1,0 +1,25 @@
+.nombre {
+    text-align: center;
+    font-size: 25px;
+  }
+
+  .precio {
+    font-size: 50px;
+  }
+
+  .envio {
+    font-size: 15px;
+    color: orange;
+  }
+
+  .envioGratis {
+    font-size: 15px;
+    color: green;
+  }
+
+  .cantidadVendidos {
+    font-size: 12px;
+  }
+  .lista {
+    padding: 50px;
+  }

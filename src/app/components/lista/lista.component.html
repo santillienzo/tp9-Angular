@@ -1,0 +1,22 @@
+<div>
+    <input type="text" placeholder="Search..." [(ngModel)]="term">
+    <ul *ngFor="let item of items | filter:term">
+        <div class="media">
+            <img src="assets/images/{{item.imagen}}" class="align-self-center mr-3" alt="...">
+            <div class="media-body">
+              <a class="nombre" [routerLink]="['/lista', item.id]">{{item.instrumento}}</a>
+              <p class="precio">${{item.precio}}</p>
+              <div *ngIf="item.costoEnvio === 'G'; else elseBlock">
+                  <p class="envioGratis">
+                    <img src="assets/images/camion.png">  
+                    Envio Gratis a todo el pais</p>
+              </div>
+              <ng-template #elseBlock>
+                  <p class="envio">Costo de Envio Interior de Argentina: ${{item.costoEnvio}}</p>
+              </ng-template>
+              <p class="cantidadVendidos">{{item.cantidadVendida}} vendidos</p>
+            </div>
+        </div>
+        <hr>
+    </ul>
+</div>

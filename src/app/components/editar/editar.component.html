@@ -1,0 +1,35 @@
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Instrumento</th>
+        <th scope="col">Marca</th>
+        <th scope="col">Modelo</th>
+        <th scope="col">Imagen</th>
+        <th scope="col">Precio</th>
+        <th scope="col">Costo Envio</th>
+        <th scope="col">Cantidad Vendida</th>
+        <th scope="col">Descripcion</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let item of items">
+            <td>{{item.id}}</td>
+            <td>{{item.instrumento}}</td>
+            <td>{{item.marca}}</td>
+            <td>{{item.modelo}}</td>
+            <td>{{item.imagen}}</td>
+            <td>{{item.precio}}</td>
+            <td>{{item.costoEnvio}}</td>
+            <td>{{item.cantidadVendida}}</td>
+            <td>{{item.descripcion}}</td>
+            <td>
+                <button type="button" class="btn btn-warning" (click)="editar(item.id)">Editar</button>
+            </td>
+            <td>
+                <button type="button" class="btn btn-danger" (click)="eliminar(item.id)">Eliminar</button>
+            </td>
+        </tr>
+    </tbody>
+    <button type="button" class="btn btn-primary" (click)="nuevo()">Agregar</button>
+  </table>

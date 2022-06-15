@@ -1,0 +1,24 @@
+<div class="media" style="padding: 70px; justify-content: center;">
+    <img src="assets/images/{{item.imagen}}" class="align-self-center mr-3" alt="..." width="512">
+    <div class="media-body lineaVertical" style="text-align: left; padding: 40px">
+        <p class="cantidad">{{item.cantidadVendida}} vendidos</p>
+        <h5 class="mt-0 nombre">{{item.instrumento}}</h5>
+        <p class="precio">${{item.precio}}</p>
+        <p>Marca: {{item.marca}}</p>
+        <p>Modelo: {{item.modelo}}</p>
+        <p>Costo Envio: </p>
+        <div *ngIf="item.costoEnvio === 'G'; else elseBlock">
+            <p class="envioGratis">
+                <img src="assets/images/camion.png">
+                Envio Gratis</p>
+        </div>
+        <ng-template #elseBlock>
+            <p class="envio">${{item.costoEnvio}}</p>
+        </ng-template>
+        <button type="button" class="btn btn-primary">Agregar al carrito</button>
+    </div>
+</div>
+<div class="descripcion">
+    <p>Descripcion:</p>
+    <p>{{item.descripcion}}</p>
+</div>
